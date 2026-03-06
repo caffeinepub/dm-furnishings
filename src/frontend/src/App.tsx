@@ -163,18 +163,18 @@ function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-charcoal"
     >
-      {/* Background image */}
+      {/* Subtle radial glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,_rgba(184,148,90,0.12)_0%,_transparent_70%)]" />
+      {/* Faint geometric texture lines */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage:
-            "url('/assets/generated/hero-curtains.dim_1600x900.jpg')",
+            "repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.5) 60px, rgba(255,255,255,0.5) 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.5) 60px, rgba(255,255,255,0.5) 61px)",
         }}
       />
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/70 to-charcoal/85" />
 
       {/* Gold decorative line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gold-gradient opacity-70" />
@@ -350,25 +350,24 @@ function AboutSection() {
             </Button>
           </motion.div>
 
-          {/* Image column */}
+          {/* Logo column */}
           <motion.div
             initial={{ opacity: 0, x: 32 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="relative"
+            className="relative flex flex-col items-center justify-center"
           >
-            <div className="relative overflow-hidden rounded-lg shadow-luxury">
+            <div className="bg-white rounded-2xl shadow-luxury border border-beige-dark p-10 flex items-center justify-center w-full">
               <img
-                src="/assets/generated/about-manufacturing.dim_900x600.jpg"
-                alt="DM Furnishings manufacturing facility in Surat"
-                className="w-full h-80 lg:h-96 object-cover"
+                src="/assets/uploads/WhatsApp-Image-2026-03-07-at-3.18.33-AM-1.jpeg"
+                alt="DM Furnishings logo"
+                className="max-w-xs w-full object-contain"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 to-transparent" />
             </div>
             {/* Floating badge */}
-            <div className="absolute -bottom-5 -left-5 bg-white rounded-lg shadow-luxury p-4 border border-beige-dark">
+            <div className="mt-6 bg-white rounded-lg shadow-luxury p-4 border border-beige-dark self-start">
               <div className="font-display text-2xl font-bold text-gold">
                 Surat
               </div>
