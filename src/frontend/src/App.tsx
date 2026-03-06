@@ -163,16 +163,17 @@ function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-charcoal"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ backgroundColor: "oklch(0.93 0.018 75)" }}
     >
       {/* Subtle radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,_rgba(184,148,90,0.12)_0%,_transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,_rgba(184,148,90,0.07)_0%,_transparent_70%)]" />
       {/* Faint geometric texture lines */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
-            "repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.5) 60px, rgba(255,255,255,0.5) 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.5) 60px, rgba(255,255,255,0.5) 61px)",
+            "repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(100,80,40,0.4) 60px, rgba(100,80,40,0.4) 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(100,80,40,0.4) 60px, rgba(100,80,40,0.4) 61px)",
         }}
       />
 
@@ -180,30 +181,18 @@ function HeroSection() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gold-gradient opacity-70" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center px-4 md:px-8">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 border border-gold/40 bg-gold/10 text-gold text-xs font-body font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-8"
-        >
-          <Star size={12} fill="currentColor" />
-          Premium Textile Manufacturer — Surat, India
-          <Star size={12} fill="currentColor" />
-        </motion.div>
-
         {/* Main heading */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
+          className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-charcoal leading-tight mb-6"
         >
           DM Furnishings
           <span className="block text-gold mt-2 text-3xl md:text-5xl lg:text-6xl italic">
             Premium Curtain Manufacturer
           </span>
-          <span className="block text-white/90 text-2xl md:text-3xl lg:text-4xl font-normal mt-2 not-italic">
+          <span className="block text-charcoal/80 text-2xl md:text-3xl lg:text-4xl font-normal mt-2 not-italic">
             &amp; Wholesale Supplier
           </span>
         </motion.h1>
@@ -213,7 +202,7 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="font-body text-base md:text-lg text-white/75 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="font-body text-base md:text-lg text-charcoal/65 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Supplying premium curtain fabrics to retailers, distributors, and
           interior designers across India. Based in Surat – India's textile
@@ -261,7 +250,7 @@ function HeroSection() {
               <div className="font-display text-3xl font-bold text-gold">
                 {stat.value}
               </div>
-              <div className="font-body text-xs text-white/60 uppercase tracking-widest mt-1">
+              <div className="font-body text-xs text-charcoal/55 uppercase tracking-widest mt-1">
                 {stat.label}
               </div>
             </div>
@@ -270,7 +259,7 @@ function HeroSection() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-beige to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[oklch(0.93_0.018_75)] to-transparent" />
     </section>
   );
 }
